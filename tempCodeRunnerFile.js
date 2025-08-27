@@ -32,24 +32,20 @@ const totalPrice = inputUserKm * basePrice;
 // console.log(totalPrice.toFixed(2)); // Converte i numeri in decimale
 
 if(inputUserAge < 18 ){
-  price = totalPrice - (totalPrice * discountUnder / 100);
-  console.log("Idoneo allo sconto per minorenni, pagherai:", price.toFixed(2) + "€");
-}
+  price = inputUserKm * discountUnder / 100;
+  console.log("Idoneo allo sconto per minorenni, pagherai:", price.toFixed(2));
+};
 
 else if (inputUserAge > 18 && inputUserAge < 65){
   price = inputUserKm * basePrice;
-  console.log("Nessun sconto applicabile, pagherai: ", price.toFixed(2) + "€" );
-}
+  console.log("Nessun sconto applicabile, pagherai: ", price.toFixed(2) );
+};
  
-else if (inputUserAge > 65) {
-  price = totalPrice - (totalPrice * discountOver / 100);
-  console.log("Idoneo allo sconto per over 65, pagherai:", price.toFixed(2) + "€");
-}
+else if (inputUserAge > 65){
+  price = inputUserKm * discountOver / 100;
+  console.log("Idoneo allo sconto per over 65, pagherai:", price.toFixed(2));
+};
 
 
 
-
-// if (inputUserAge < 18){
-//   console.log('Idoneo allo sconto per minorenni, pagherai: ')
-// }
 
